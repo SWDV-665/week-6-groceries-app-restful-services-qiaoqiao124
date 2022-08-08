@@ -30,11 +30,6 @@ export class GroceriesServiceProvider {
     return body || { };
   }
 
-  // getItems() {
-  //   this.items = this.http.get(this.baseURL + "/api/groceries");
-  //   return this.items;
-  // }
-
   getItems(): Observable<object[]> {
     return this.http.get(this.baseURL + "/api/groceries").pipe(
       map(this.extractData),
@@ -42,20 +37,12 @@ export class GroceriesServiceProvider {
     );
   }
 
-  // removeItem(index) {
-  //   this.items.splice(index, 1);
-  // }
-
   removeItem(index){
     this.http.delete(this.baseURL + "/api/groceries/" + index).subscribe(res => {
       this.items = <any>res;
       this.dataModifySubject.next(true);
     });
   }
-
-  // addItem(item) {
-  //   this.items.push(item);
-  // }
 
   addItem(data){
     this.http.post(this.baseURL + "/api/groceries", data).subscribe(res => {

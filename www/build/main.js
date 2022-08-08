@@ -46,16 +46,9 @@ var GroceriesServiceProvider = /** @class */ (function () {
         var body = res;
         return body || {};
     };
-    // getItems() {
-    //   this.items = this.http.get(this.baseURL + "/api/groceries");
-    //   return this.items;
-    // }
     GroceriesServiceProvider.prototype.getItems = function () {
         return this.http.get(this.baseURL + "/api/groceries").pipe(Object(__WEBPACK_IMPORTED_MODULE_3_rxjs_operators__["map"])(this.extractData), Object(__WEBPACK_IMPORTED_MODULE_3_rxjs_operators__["catchError"])(this.handleError));
     };
-    // removeItem(index) {
-    //   this.items.splice(index, 1);
-    // }
     GroceriesServiceProvider.prototype.removeItem = function (index) {
         var _this = this;
         this.http.delete(this.baseURL + "/api/groceries/" + index).subscribe(function (res) {
@@ -63,9 +56,6 @@ var GroceriesServiceProvider = /** @class */ (function () {
             _this.dataModifySubject.next(true);
         });
     };
-    // addItem(item) {
-    //   this.items.push(item);
-    // }
     GroceriesServiceProvider.prototype.addItem = function (data) {
         var _this = this;
         this.http.post(this.baseURL + "/api/groceries", data).subscribe(function (res) {
@@ -436,9 +426,10 @@ var InputDialogProvider = /** @class */ (function () {
     ;
     InputDialogProvider = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["A" /* Injectable */])(),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["a" /* AlertController */], __WEBPACK_IMPORTED_MODULE_0__providers_groceries_service_groceries_service__["a" /* GroceriesServiceProvider */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["a" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["a" /* AlertController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_0__providers_groceries_service_groceries_service__["a" /* GroceriesServiceProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__providers_groceries_service_groceries_service__["a" /* GroceriesServiceProvider */]) === "function" && _b || Object])
     ], InputDialogProvider);
     return InputDialogProvider;
+    var _a, _b;
 }());
 
 //# sourceMappingURL=input-dialog.js.map

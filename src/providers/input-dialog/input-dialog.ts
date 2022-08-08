@@ -17,7 +17,6 @@ export class InputDialogProvider {
   }
 
   showPrompt(item?, index?) {
-  
     const prompt = this.alertCtrl.create({
       title: item? 'Edit Item': 'Add Item',
       message: item? "Please edit item" : "Please add item",
@@ -27,7 +26,6 @@ export class InputDialogProvider {
           placeholder: 'Name',
           value: item? item.name: null
         },
-  
         {
           name: 'quantity',
           placeholder: 'Quantity',
